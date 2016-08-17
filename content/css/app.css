@@ -1,3 +1,11 @@
-html, body {
+html, body,input,select,textarea {
 	font-size:1.1em;
+}
+
+
+/* Overrides*/
+@media (min-width: 768px) {
+	.navbar-right {
+		margin-right:15px !important;
+	}
 }
