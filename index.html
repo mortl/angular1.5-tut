@@ -8,6 +8,16 @@
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="content/css/app.css">
+    <style>
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+        display: none !important;
+    }
+    </style>
 </head>
 
 <body ng-cloak>
@@ -15,17 +25,21 @@
         <nav class="navbar navbar-default">
             <div class="container">
                 <a class="navbar-brand" href="/">AngularJS</a>
+          
+                
+              </div>
+              <div class="container">
+               <ul class="nav navbar navbar-right ">
+                    <li> <a href="#"><i class="fa fa-home"></i> Home</a></li>
+                </ul>
             </div>
-            <ul class="nav navbar navbar-right ">
-                <li> <a href="#"><i class="fa fa-home"></i> Home</a></li>
-            </ul>
         </nav>
     </header>
     <!-- /header -->
     <div class="container" ng-cloak>
         <div ng-controller="TutController">
             <h2>{{name}}</h2>
-          <!--   <div class="row">
+            <!--   <div class="row">
                 <div class="col-md-12">
                     <form name="myForm" role="form">
                        <div class="form-group">
@@ -42,15 +56,23 @@
                     </form>
                 </div>
             </div> -->
-		<div class="jumbotron">
-            <div >
-            	<label>What is your twitter handle?</label>
-            	<input type="text" name="twitter" value="" placeholder="" ng-model="handle" ng-model-options="{debounce: 500}">
+            <div class="jumbotron">
+                <div>
+                    <label>What is your twitter handle?</label>
+                    <input type="text" name="twitter" value="" placeholder="" ng-model="handle" ng-model-options="{debounce: 500}">
+                </div>
+               
+
+             
+                <hr />
+                <h1 ng-cloak><a target="_blank" href="http://twitter.com/{{ lowercasehandle() }}" title="">twitter.com/{{ lowercasehandle() }}</a></h1>
+
+                <h3>Rules</h3>
+                <ul>
+                    <li ng-repeat="rule in rules">{{rule.rulename}}</li>
+                </ul>
             </div>
-			<hr />
-			<h1><a target="_blank" href="http://twitter.com/{{handle}}" title="">twitter.com/{{handle}}</a></h1>
         </div>
-       </div>
     </div>
     </div>
     <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
