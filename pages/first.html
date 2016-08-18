@@ -1,0 +1,30 @@
+
+<div ng-controller="CrudController">
+        	<h2>First Page</h2>
+            <div class="jumbotron">
+                <div>
+                    <label>What is your twitter handle?</label>
+                    <input type="text" name="twitter" value="" placeholder="" ng-model="handle" ng-model-options="{debounce: 500}">
+                </div>
+               
+
+             
+                <hr />
+                <h1 ng-cloak><a target="_blank" href="http://twitter.com/{{ lowercasehandle() }}" title="">twitter.com/{{ lowercasehandle() }}</a></h1>
+
+                <h3>Rules</h3>
+                <ul>
+                    <li ng-repeat="rule in rules" >
+                         {{rule.rulename}}
+
+                    </li>
+                </ul>
+
+                
+
+                 <form>
+                    New Rule: <input type="text" name="newRule"  ng-model="formData.rulename">
+                    <button type="submit" ng-click="addRule()" class="btn btn-primary ">Add</button>
+                </form>
+            </div>
+        </div>

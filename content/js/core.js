@@ -1,8 +1,23 @@
-var crudApp = angular.module('crudApp', []);
+var crudApp = angular.module('crudApp', ['ngRoute']);
 
 
+
+crudApp.config( function($routeProvider){
+        $routeProvider
+            .when('/',{
+                templateUrl:'pages/first.html',
+                controller:'CrudController'
+            })
+            .when('/second', {
+                templateUrl:'pages/second.html',
+                controller:'SecondController'
+            });
+});
 crudApp.controller('CrudController', ['$scope', '$http', '$log','$filter', CrudController]);
 
+crudApp.controller('SecondController', ['$scope','$log', function($scope,$log){
+        console.log('Second');
+}]);
 function CrudController($scope, $http, $log,$filter) {
     $scope.formData = {};
 

@@ -4,8 +4,3 @@ html, body,input,select,textarea {
 
 
 /* Overrides*/
-@media (min-width: 768px) {
-	.navbar-right {
-		margin-right:15px !important;
-	}
-}

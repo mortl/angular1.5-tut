@@ -24,69 +24,26 @@
     <header>
         <nav class="navbar navbar-default">
             <div class="container">
-                <a class="navbar-brand" href="/">AngularJS</a>
-          
-                
-              </div>
-              <div class="container">
-               <ul class="nav navbar navbar-right ">
-                    <li> <a href="#"><i class="fa fa-home"></i> Home</a></li>
+               <div class="navbar-header">
+                    <a class="navbar-brand" href="#/">AngularJS</a>
+               </div>        
+              
+               <ul class="nav navbar-nav navbar-right ">
+                    <li> <a href="#/"><i class="fa fa-home"></i> Home</a></li>
+                    <li> <a href="#/second"><i class="fa fa-bolt"></i> Second</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <!-- /header -->
     <div class="container" ng-cloak>
-        <div ng-controller="CrudController">
-        <!-- <h2>{{name}}</h2> -->
-            <!--   <div class="row">
-                <div class="col-md-12">
-                    <form name="myForm" role="form">
-                       <div class="form-group">
-	                        <label>
-	                            Enter text:
-	                            <input class="form-control" type="email" ng-model="field" name="myField" required minlength="5" />
-	                        </label>
-                        </div>
-                        <div ng-messages="myForm.myField.$error" role="alert" class="form-group">
-                            <div class="alert-info " ng-message="required">Please enter a value for this field.</div>
-                            <div ng-message="email">This field must be a valid email address.</div>
-                            <div class="alert-danger " ng-message="minlength">The message is too short</div>
-                        </div>
-                    </form>
-                </div>
-            </div> -->
-            <div class="jumbotron">
-                <div>
-                    <label>What is your twitter handle?</label>
-                    <input type="text" name="twitter" value="" placeholder="" ng-model="handle" ng-model-options="{debounce: 500}">
-                </div>
-               
-
-             
-                <hr />
-                <h1 ng-cloak><a target="_blank" href="http://twitter.com/{{ lowercasehandle() }}" title="">twitter.com/{{ lowercasehandle() }}</a></h1>
-
-                <h3>Rules</h3>
-                <ul>
-                    <li ng-repeat="rule in rules" >
-                         {{rule.rulename}}
-
-                    </li>
-                </ul>
-
-                
-
-                 <form>
-                    New Rule: <input type="text" name="newRule"  ng-model="formData.rulename">
-                    <button type="submit" ng-click="addRule()" class="btn btn-primary ">Add</button>
-                </form>
-            </div>
+        <div ng-view>
+            
         </div>
     </div>
     </div>
     <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
-    
+    <script src="bower_components/angular-route/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="content/js/core.js" type="text/javascript"></script>
     <!-- <script src="content/js/testing.js" type="text/javascript"></script> -->
 </body>
