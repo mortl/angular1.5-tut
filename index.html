@@ -71,13 +71,17 @@
                 <ul>
                     <li ng-repeat="rule in rules">{{rule.rulename}}</li>
                 </ul>
+
+                <form action="http://127.0.0.1:8080/testing" method="POST" accept-charset="utf-8">
+                    New Rule: <input type="text" name="newRule"  ng-model="newRule">
+                    <input type="submit" ng-click="addRule()">
+                </form>
             </div>
         </div>
     </div>
     </div>
     <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="bower_components/angular-messages/angular-messages.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="bower_components/angular-resource/angular-resource.min.js" type="text/javascript" charset="utf-8"></script>
+    
     <script src="content/js/app.js" type="text/javascript"></script>
     <script src="content/js/testing.js" type="text/javascript"></script>
 </body>
