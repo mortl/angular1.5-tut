@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="crudApp">
 
 <head>
     <meta charset="UTF-8">
@@ -37,8 +37,8 @@
     </header>
     <!-- /header -->
     <div class="container" ng-cloak>
-        <div ng-controller="TutController">
-            <h2>{{name}}</h2>
+        <div ng-controller="CrudController">
+        <!-- <h2>{{name}}</h2> -->
             <!--   <div class="row">
                 <div class="col-md-12">
                     <form name="myForm" role="form">
@@ -69,12 +69,17 @@
 
                 <h3>Rules</h3>
                 <ul>
-                    <li ng-repeat="rule in rules">{{rule.rulename}}</li>
+                    <li ng-repeat="rule in rules" >
+                         {{rule.rulename}}
+
+                    </li>
                 </ul>
 
-                <form action="/api" method="POST" accept-charset="utf-8">
-                    New Rule: <input type="text" name="newRule"  ng-model="newRule">
-                    <input type="submit" ng-click="addRule()">
+                
+
+                 <form>
+                    New Rule: <input type="text" name="newRule"  ng-model="formData.rulename">
+                    <button type="submit" ng-click="addRule()" class="btn btn-primary ">Add</button>
                 </form>
             </div>
         </div>
@@ -82,8 +87,8 @@
     </div>
     <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
     
-    <script src="content/js/app.js" type="text/javascript"></script>
-    <script src="content/js/testing.js" type="text/javascript"></script>
+    <script src="content/js/core.js" type="text/javascript"></script>
+    <!-- <script src="content/js/testing.js" type="text/javascript"></script> -->
 </body>
 
 </html>

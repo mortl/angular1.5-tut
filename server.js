@@ -19,6 +19,7 @@ var Rule = mongoose.model('Rule', {
 	rulename : String
 });
 
+var _rule = new Rule();
 
 
 
@@ -33,9 +34,17 @@ app.get('/api', function(req, res){
 
 });
 
+app.get('/api/:id', function(req,res){k
+	var ruleId = req.params.id;
+
+	Rule.findById(ruleId, function(err,rules){
+			res.send(rules);
+	});
+});
+
 app.post('/api',function(req,res){
 	Rule.create({
-		rulename :req.body.ruleName,
+		rulename :req.body.rulename,
 		done:false
 	},
 	 function(error,rule){
@@ -63,7 +72,7 @@ app.delete('/api/:rule_id', function(req,res) {
 			Rule.find(function(err,rules){
 					if(err)
 					  res.send(err)
-					res.json(rules);
+					res.json()
 
 
 			});
