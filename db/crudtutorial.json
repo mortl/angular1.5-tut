@@ -1,0 +1,3 @@
+{"_id":{"$oid":"57b5d1f98ef963456f81946c"},"id":1.0,"rulename":"Must be 5 characers"}
+{"_id":{"$oid":"57b5d1f98ef963456f81946d"},"id":2.0,"rulename":"Must not contain numbers"}
+{"_id":{"$oid":"57b5d1f98ef963456f81946e"},"id":3.0,"rulename":"Must have a captial letter"}
