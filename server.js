@@ -87,7 +87,7 @@ app.delete('/api/:rule_id', function(req,res) {
 
 
 app.listen(8080);
-console.log("Express listening on port 8080");
+console.log("Express serving at http://localhost:8080");
 
 
 

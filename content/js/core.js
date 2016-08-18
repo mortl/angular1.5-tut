@@ -17,6 +17,24 @@ crudApp.controller('CrudController', ['$scope', '$http', '$log','$filter', CrudC
 
 crudApp.controller('SecondController', ['$scope','$log', function($scope,$log){
         console.log('Second');
+        $scope.people =[ 
+        {
+            name:'John Doe',
+            address:'123 Dundas St W, Toronto, ON, M5R3T5'
+        },
+        {
+            name:'Jane Doe',
+            address:'123 Dundas St W, Mississauga, ON, M5R3T5'
+        },
+        {
+            name:'Robert Doe',
+            address:'5343 George Rd, Ottawa, ON, M5R3T5'
+        },
+        {
+            name:'Steve Doe',
+            address:'143153 Dunlop St , Barrie, ON, M5R3T5'
+        }
+        ];
 }]);
 function CrudController($scope, $http, $log,$filter) {
     $scope.formData = {};
@@ -62,3 +80,16 @@ function CrudController($scope, $http, $log,$filter) {
 
 
 }
+
+
+crudApp.directive("searchResult", function(){
+    return {
+        restrict: 'AE',
+        templateUrl:'directives/searchresult.html',
+        replace:true,
+        scope: {
+            personObject: "="
+        }
+
+    }
+})
