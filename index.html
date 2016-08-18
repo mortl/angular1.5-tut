@@ -72,7 +72,7 @@
                     <li ng-repeat="rule in rules">{{rule.rulename}}</li>
                 </ul>
 
-                <form action="http://127.0.0.1:8080/testing" method="POST" accept-charset="utf-8">
+                <form action="/api" method="POST" accept-charset="utf-8">
                     New Rule: <input type="text" name="newRule"  ng-model="newRule">
                     <input type="submit" ng-click="addRule()">
                 </form>
